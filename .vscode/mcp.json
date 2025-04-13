@@ -1,0 +1,17 @@
+{
+    "servers": {
+        "mcp-sap-cap-server-2": {
+            "type": "stdio",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "D:/Work/open-data-gov-ro-mcp"
+            ]
+        },
+        "my-mcp-server-e8e3695g": {
+            "type": "sse",
+            "url": "http://localhost:21212/"
+        }
+    }
+}
