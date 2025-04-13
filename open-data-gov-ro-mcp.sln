@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "open-data-gov-ro-mcp", "open-data-gov-ro-mcp.csproj", "{3D74E3CB-D971-203C-4E73-7E0B672A77B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D74E3CB-D971-203C-4E73-7E0B672A77B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D74E3CB-D971-203C-4E73-7E0B672A77B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D74E3CB-D971-203C-4E73-7E0B672A77B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D74E3CB-D971-203C-4E73-7E0B672A77B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F450967B-5062-4825-A783-FA134416100C}
+	EndGlobalSection
+EndGlobal
