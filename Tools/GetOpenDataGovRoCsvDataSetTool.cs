@@ -76,6 +76,16 @@ namespace OpenDataGovRo.Tools
 
                 if (!string.IsNullOrEmpty(outputFilePath))
                 {
+                    if(File.Exists(outputFilePath))
+                    {
+                        var existingFileInfo = new FileInfo(outputFilePath);
+                        logger.LogInformation("File already exists {outputFilePath}", existingFileInfo.FullName);
+                        return existingFileInfo.FullName; // Return the existing file path if the file already exists
+                    }
+
+                    logger.LogInformation("File does not exist, downloading: {outputFilePath}", outputFilePath);
+                    
+                    // Create a new HttpClient instance
                     var httpClient = HttpClientFactory.Client;
 
                     logger.LogInformation("Downloading CSV data from {datasetUrl}", datasetUrl);
@@ -90,7 +100,14 @@ namespace OpenDataGovRo.Tools
                     logger.LogInformation("CSV data saved successfully");
                 }
 
-                return outputFilePath;
+                // get ful path of the file
+                var fileInfo = new FileInfo(outputFilePath);
+                if (!fileInfo.Exists)
+                {
+                    logger.LogError("File does not exist after download: {outputFilePath}", outputFilePath);
+                    throw new McpException($"File does not exist after download: {outputFilePath}", 500);
+                }
+                return fileInfo.FullName; // Return the full path of the downloaded file
             }
             catch (HttpRequestException ex)
             {
