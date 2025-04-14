@@ -1,0 +1,12 @@
+services:
+  tools:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "21212:21212"  # HTTP port
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - C:/Work/open-data-gov-ro-mcp/Resources:/app/build/Resources  # Mount local ./data directory to /app/data in the container
+    restart: unless-stopped
